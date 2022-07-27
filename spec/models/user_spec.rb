@@ -7,4 +7,8 @@ RSpec.describe User, type: :model do
     it { should validate_uniqueness_of :username}
     it { should validate_uniqueness_of :email}
   end
+
+  describe 'associations' do
+    it { should have_many :favorites }
+  end
 end
