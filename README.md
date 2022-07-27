@@ -1,24 +1,54 @@
-# README
+# HISTORY MAPS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![HistoryMaps](./pictures/history_maps.png)  
+<br>
 
-Things you may want to cover:
+## About our Project
+---
 
-* Ruby version
+Some filler about what our project is doing  
+<br>
 
-* System dependencies
+## How to access the API
+---
 
-* Configuration
+Some filler about how to access the endpoints  
+<br>
 
-* Database creation
+## Contributors
+---
+- Zac Hazelwood -insert github usernames and pictures here
 
-* Database initialization
+- Oscar Santos -insert github usernames and pictures here
 
-* How to run the test suite
+- Luke Pascale -insert github usernames and pictures here
 
-* Services (job queues, cache servers, search engines, etc.)
+- Clay Ash -insert github usernames and pictures here
 
-* Deployment instructions
+- Matthew Deming -insert github usernames and pictures here
 
-* ...
+- Colin Reinhart -insert github usernames and pictures here  
+<br>
+## Endpoints Available
+---
+
+- GET '/api/v1/register' --> Routes to users#new
+
+- POST '/api/v1/register' --> Routes to users#create  
+  
+  
+<br>
+
+## Repo and Heroku Sites
+---
+__Backend__
+
+- https://github.com/enalihai/history_maps_be
+
+- https://history-maps-be.herokuapp.com/
+
+__Frontend__
+
+- https://github.com/clayash/history_maps_FE
+
+- heroku placeholder for FE
