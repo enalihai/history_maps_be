@@ -15,20 +15,6 @@ Some filler about what our project is doing
 Some filler about how to access the endpoints  
 <br>
 
-## Contributors
----
-- Zac Hazelwood -insert github usernames and pictures here
-
-- Oscar Santos -insert github usernames and pictures here
-
-- Luke Pascale -insert github usernames and pictures here
-
-- Clay Ash -insert github usernames and pictures here
-
-- Matthew Deming -insert github usernames and pictures here
-
-- Colin Reinhart -insert github usernames and pictures here  
-<br>
 ## Endpoints Available
 ---
 
@@ -51,4 +37,31 @@ __Frontend__
 
 - https://github.com/clayash/history_maps_FE
 
-- heroku placeholder for FE
+- heroku placeholder for FE  
+<br>
+
+## Contributors
+---
+Zac Hazelwood  
+GitHub: @ZacHazelwood  
+![Zac](./pictures/zac.png)  
+
+Oscar Santos  
+GitHub: @Oscar-Santos  
+![Oscar](./pictures/oscar.png)  
+
+Luke Pascale  
+GitHub: @enalihai  
+![Luke](./pictures/luke.png)  
+
+Clay Ash  
+GitHub: @ClayAsh  
+![Clay](./pictures/clay.png)  
+
+Matthew Deming  
+GitHub: @Deming-Matt  
+![Matt](./pictures/matt.png)  
+
+Colin Reinhart  
+GitHub: @ColinReinhart  
+![Colin](./pictures/colin.png)
