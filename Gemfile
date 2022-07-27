@@ -48,9 +48,9 @@ group :test do
   gem 'launchy'
   gem 'webmock'
   # gem 'vcr'
-  gem 'factory_bot_rails'
-  gem 'faker'
-  gem 'shoulda-matchers'
+  # gem 'factory_bot_rails'
+  # gem 'faker'
+  # gem 'shoulda-matchers'
 end
 
 group :development do
