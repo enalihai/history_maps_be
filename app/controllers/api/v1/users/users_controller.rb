@@ -16,12 +16,12 @@ class Api::V1::Users::UsersController < ApplicationController
   def new; end
 
   def create
-    user_create = User.create(user_params)
+    user_create = User.create(email: user_params[:email], username: user_params[:username])
     render json: UserSerializer.new(user_create), status: 201
   end
 
   private
     def user_params
-      params.require(:user).permit(:email, :username)
+      params.permit(:email, :username)
     end
 end
