@@ -31,4 +31,16 @@ RSpec.describe "Users API Requests" do
     expect(user[:attributes][:email]).to be_a String
     expect(user[:attributes][:username]).to be_a String
   end
+
+  it "sends an error if a favorite is not found" do
+    user = User.create({ email: 'fakeemail@email.com',
+                         username: 'RealUser',
+                         id: 1 })
+
+    get "/api/v1/users/2"
+
+    expect(response.status).to eq(404)
+    expect(response.code).to eq("404")
+    expect(response.message).to eq("Not Found")
+  end
 end

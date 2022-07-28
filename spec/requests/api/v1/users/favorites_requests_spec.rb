@@ -104,4 +104,17 @@ RSpec.describe "Favorites API requests" do
     expect(favorite[:attributes][:user_id]).to be_a Integer
     expect(favorite[:attributes][:user_id]).to eq(user_1.id)
   end
+
+  it "sends an error if a favorite is not found" do
+    user_1 = User.first
+    fav_1 = Favorite.create!({  location: "123 Real Street, Denver, CO",
+                                        user_id: user_1.id,
+                                        id: 1})
+
+    get "/api/v1/users/#{user_1.id}/favorites/2"
+
+    expect(response.status).to eq(404)
+    expect(response.code).to eq("404")
+    expect(response.message).to eq("Not Found")
+  end
 end
