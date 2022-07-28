@@ -81,10 +81,10 @@ RSpec.describe "Users API Requests" do
     expect(user).to have_key :attributes
     expect(user[:attributes]).to be_a Hash
 
-    expect(user[:attributes]).to have_key :username
+    expect(user[:attributes]).to have_key :email
     expect(user[:attributes][:email]).to be_a String
 
-    expect(user[:attributes]).to have_key :email
+    expect(user[:attributes]).to have_key :username
     expect(user[:attributes][:username]).to be_a String
   end
 end
