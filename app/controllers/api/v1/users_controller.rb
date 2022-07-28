@@ -16,7 +16,7 @@ class Api::V1::UsersController < ApplicationController
   def new; end
 
   def create
-    user_create = User.create(email: user_params[:email], username: user_params[:username])
+    user_create = User.find_or_create_by!(email: params[:email], username: params[:username])
     render json: UserSerializer.new(user_create), status: 201
   end
 
