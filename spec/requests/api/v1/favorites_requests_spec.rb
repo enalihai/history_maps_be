@@ -8,7 +8,7 @@ RSpec.describe "Favorites API requests" do
 
     headers = { "CONTENT_TYPE" => "application/json" }
 
-    post "/api/v1/favorites/new", headers: headers, params: JSON.generate(fav_params)
+    post "/api/v1/users/#{user.id}/favorites", headers: headers, params: JSON.generate(fav_params)
 
     response_body = JSON.parse(response.body, symbolize_names: true)
     favorites = response_body[:data]

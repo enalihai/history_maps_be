@@ -7,7 +7,7 @@ RSpec.describe "Users API Requests" do
 
     headers = { "CONTENT_TYPE" => "application/json" }
 
-    post "/api/v1/register", headers: headers, params: JSON.generate(user_params)
+    post "/api/v1/users/register", headers: headers, params: JSON.generate(user_params)
 
     response_body = JSON.parse(response.body, symbolize_names: true)
     user = response_body[:data]
