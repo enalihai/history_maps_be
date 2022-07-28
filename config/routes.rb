@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
       get '/favorites/new', to: 'favorites#new'
       post '/favorites/new', to: 'favorites#create'
+
+      get '/search', to: 'location_search#show'
     end
   end
 end
