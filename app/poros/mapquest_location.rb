@@ -6,7 +6,6 @@ class MapquestLocation
               :zipcode
 
   def initialize(data)
-    require "pry"; binding.pry
     @street   = data[0][:street]
     @county   = data[0][:adminArea4]
     @city     = data[0][:adminArea5]
