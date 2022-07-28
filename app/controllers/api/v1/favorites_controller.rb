@@ -1,4 +1,17 @@
 class Api::V1::FavoritesController < ApplicationController
+  def index
+    render json: FavoriteSerializer.new(Favorite.all)
+  end
+
+  def show
+    favorite = Favorite.find_by_id(params[:id])
+    if favorite
+      render json: FavoriteSerializer.new(favorite)
+    else
+      render json: { status: "Favorite Not Found", code: 404, message: "Favorite Not Found" }, status: 404
+    end
+  end
+
   def new; end
 
   def create
