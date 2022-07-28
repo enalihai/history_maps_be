@@ -111,6 +111,10 @@ GEM
       racc (~> 1.4)
     nokogiri (1.13.8-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.13.8-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.13.8-x86_64-linux)
+      racc (~> 1.4)
     pg (1.4.2)
     pry (0.14.1)
       coderay (~> 1.1)
@@ -230,4 +234,4 @@ RUBY VERSION
    ruby 2.7.2p137
 
 BUNDLED WITH
-   2.3.12
+   2.3.18
