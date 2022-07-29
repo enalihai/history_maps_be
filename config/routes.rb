@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get '/'
 
   namespace :api do
-    namespace :v1 do      
+    namespace :v1 do
       resources :users, only: [:index, :show] do
         resources :favorites, only: [:index, :show, :new, :create]
       end
@@ -11,6 +11,9 @@ Rails.application.routes.draw do
       post '/users/register', to: 'users#create'
 
       get '/search', to: 'location_search#show'
+
+      get '/results', to: 'results#index'
+      get '/results', to: 'results#show'
     end
   end
 end
