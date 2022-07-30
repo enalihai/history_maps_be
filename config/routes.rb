@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get '/search', to: 'location_search#show'
 
       get '/results', to: 'results#index'
-      get '/results', to: 'results#show'
+      get '/results/:id', to: 'results#show'
     end
   end
 end
