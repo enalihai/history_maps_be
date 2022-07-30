@@ -21,7 +21,7 @@ RSpec.describe LocService do
   end
 
   it "returns a single result from an index" do
-    result = LocService.get_single_location_data('80033', 1, 'co0994')
+    result = LocService.get_single_location_item_data('80033', 1, 'co0994')
 
     expect(result).to be_a Hash
     expect(result).to have_key :item

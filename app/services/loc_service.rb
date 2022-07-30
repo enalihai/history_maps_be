@@ -16,7 +16,7 @@ class LocService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.get_single_location_data(location, result_index_id, item_id)
+  def self.get_single_location_item_data(location, result_index_id, item_id)
     all_results = LocResultFacade.create_loc_index_results(location)
     result = all_results.find { |item| item.index_id == result_index_id }
     item_id = result.id
