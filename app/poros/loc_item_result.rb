@@ -2,7 +2,7 @@ class LocItemResult
 
   attr_reader :title,
               :other_titles,
-              :id,
+              :location_id,
               :lat,
               :long,
               :details,
@@ -13,7 +13,7 @@ class LocItemResult
   def initialize(data)
     @title = data[:item][:title]
     @other_titles = data[:item][:other_titles]
-    @id = data[:item][:id]
+    @location_id = data[:item][:id]
     @lat = data[:item][:place][0][:latitude]
     @long = data[:item][:place][0][:longitude]
     @details = data[:item][:notes][0][:note]
