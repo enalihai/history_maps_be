@@ -14,9 +14,4 @@ class Api::V1::LocationSearchController < ApplicationController
     def search_params
       params.permit(:location)
     end
-
-    # def self.search_by_street(query)
-    #   query = '%'.concat(query.downcase).concat('%')
-    #   where('lower (street) like ?', query).order(:street)
-    # end
 end
