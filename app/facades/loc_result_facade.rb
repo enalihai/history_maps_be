@@ -6,8 +6,9 @@ class LocResultFacade
     end
   end
 
-  def self.create_single_item_result(location, result_index_id, item_id)
-    json = LocService.get_single_location_item_data(location, result_index_id, item_id)
+  def self.create_single_item_result(item_id)
+    json = LocService.get_single_location_item_data(item_id)
     LocItemResult.new(json)
   end
+
 end
