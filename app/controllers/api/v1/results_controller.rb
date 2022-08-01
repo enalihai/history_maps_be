@@ -6,4 +6,9 @@ class Api::V1::ResultsController < ApplicationController
   def show
 
   end
+
+  private
+    def search_params
+      params.permit(:location)
+    end
 end
