@@ -10,16 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_27_202344) do
+ActiveRecord::Schema.define(version: 2022_08_01_165445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "favorites", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "location"
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
+    t.string "location_id"
+    t.string "other_titles"
+    t.string "details"
+    t.string "pdf"
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 

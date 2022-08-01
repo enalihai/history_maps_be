@@ -15,7 +15,7 @@ RSpec.describe LocItemResult do
     item = LocItemResult.new(data)
 
     expect(item).to be_a LocItemResult
-    expect(item.id).to eq("co0994")
+    expect(item.location_id).to eq("co0994")
     expect(item.title).to eq("Red Rocks")
     expect(item.other_titles).to eq("Park of Red Rocks")
     expect(item.lat).to eq("39.665578")
