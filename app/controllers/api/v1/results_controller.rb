@@ -12,5 +12,4 @@ class Api::V1::ResultsController < ApplicationController
   def search_params
     params.permit(:location)
   end
-
 end
