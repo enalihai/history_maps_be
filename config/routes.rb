@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
       get '/results', to: 'results#index'
       get '/results/:id', to: 'results#show'
+
+      get '/images', to: 'images#show'
     end
   end
 end
