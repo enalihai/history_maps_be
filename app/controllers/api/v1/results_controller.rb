@@ -4,6 +4,12 @@ class Api::V1::ResultsController < ApplicationController
   end
 
   def show
+    render json: LocResultFacade.create_single_item_result(params[:id])
+  end
 
+  private
+
+  def search_params
+    params.permit(:location)
   end
 end

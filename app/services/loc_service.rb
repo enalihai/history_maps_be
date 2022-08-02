@@ -16,13 +16,19 @@ class LocService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.get_single_location_item_data(location, result_index_id, item_id)
-    all_results = LocResultFacade.create_loc_index_results(location)
-    result = all_results.find { |item| item.index_id == result_index_id }
-    item_id = result.id
+  def self.get_single_location_item_data(item_id)
     response = conn.get("pictures/collection/hh/item/#{item_id}/") do |faraday|
       faraday.params['fo'] = 'json'
     end
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.get_image_data(item_id)
+    response = conn.get("pictures/item/#{item_id}/") do |faraday|
+      faraday.params['fo'] = 'json'
+    end
+    z = JSON.parse(response.body, symbolize_names: true)
+    require "pry"; binding.pry
+  end
+
 end
