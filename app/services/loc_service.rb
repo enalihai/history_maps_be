@@ -12,6 +12,7 @@ class LocService
       faraday.params['co'] = 'hh'
       faraday.params['fo'] = 'json'
       faraday.params['sg'] = 'true'
+      faraday.params['c'] = '200'
     end
     JSON.parse(response.body, symbolize_names: true)
   end

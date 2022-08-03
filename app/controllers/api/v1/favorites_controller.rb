@@ -1,6 +1,7 @@
 class Api::V1::FavoritesController < ApplicationController
   def index
-    render json: FavoriteSerializer.new(Favorite.all)
+    user = User.find_by_id(params[:user_id])
+    render json: FavoriteSerializer.new(user.favorites)
   end
 
   def show

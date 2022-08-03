@@ -16,8 +16,13 @@ RSpec.describe LocService do
 
     expect(results[:results][0]).to have_key :pk
     expect(results[:results][0]).to have_key :title
+    expect(results[:results][0]).to have_key :image
+    expect(results[:results][0][:image]).to have_key :full
+    expect(results[:results][0][:image]).to have_key :thumb
     expect(results[:results][0]).to have_key :links
     expect(results[:results][0][:links]).to have_key :item
+    expect(results[:results][0]).to have_key :creator
+    expect(results[:results][0]).to have_key :created_published_date
   end
 
   it "returns a single result from an index" do
@@ -33,6 +38,8 @@ RSpec.describe LocService do
     expect(result[:item][:place][0]).to have_key :longitude
     expect(result[:item]).to have_key :notes
     expect(result[:item][:notes][0]).to have_key :note
+    expect(result[:item]).to have_key :link
+    expect(result[:item]).to have_key :resource_links
 
     expect(result).to have_key :resources
     expect(result[:resources][0]).to have_key :url

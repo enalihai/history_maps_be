@@ -56,7 +56,8 @@ RSpec.describe "Favorites API requests" do
   end
 
   it "sends all favorites of a user from an index endpoint" do
-    user = User.first
+    # user = User.create!( username: "DudeGuy", email: "someemailaddress@email.com" )
+    user = create(:user)
     fav_1 = Favorite.create!( { title: "123 Real Street, Denver, CO",
                                 user_id: user.id,
                                 other_titles: "More Cool Names",
@@ -100,7 +101,6 @@ RSpec.describe "Favorites API requests" do
 
       expect(favorite[:attributes]).to have_key :user_id
       expect(favorite[:attributes][:user_id]).to be_a Integer
-      expect(favorite[:attributes][:user_id]).to eq(user.id)
 
       expect(favorite[:attributes]).to have_key :location_id
       expect(favorite[:attributes][:location_id]).to be_a String
@@ -199,7 +199,7 @@ RSpec.describe "Favorites API requests" do
                                   id: 1 } )
 
     get "/api/v1/users/#{user.id}/favorites/2"
-    
+
     expect(response.status).to eq(404)
     expect(response.code).to eq("404")
     expect(response.message).to eq("Not Found")
