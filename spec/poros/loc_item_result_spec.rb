@@ -8,7 +8,11 @@ RSpec.describe LocItemResult do
                       place: [ {  latitude: "39.665578",
                                   longitude: "-105.206856" } ],
                       notes: [ {  note: "Park Details" , label: "field label" },
-                               {  note: "Second Details", label: "field label" } ] },
+                               {  note: "Second Details", label: "field label" } ],
+                      link: "actual_loc_page_path",
+                      resource_links: ["path_one", "path_two"],
+                      service_medium: "some_link",
+                      service_low: "some_other_link"  },
              resources: [ {  url: "photo_path",
                              large: "large_photo_path",
                              medium: "medium_photo_path" } ]
@@ -26,5 +30,9 @@ RSpec.describe LocItemResult do
     expect(item.photo_url).to eq("photo_path")
     expect(item.photo_large).to eq("large_photo_path")
     expect(item.photo_medium).to eq("medium_photo_path")
+    expect(item.direct_link).to eq("actual_loc_page_path")
+    expect(item.resource_links).to eq(["path_one", "path_two"])
+    expect(item.service_medium).to eq("some_link")
+    expect(item.service_low).to eq("some_other_link")
   end
 end

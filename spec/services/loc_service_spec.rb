@@ -38,6 +38,8 @@ RSpec.describe LocService do
     expect(result[:item][:place][0]).to have_key :longitude
     expect(result[:item]).to have_key :notes
     expect(result[:item][:notes][0]).to have_key :note
+    expect(result[:item]).to have_key :link
+    expect(result[:item]).to have_key :resource_links
 
     expect(result).to have_key :resources
     expect(result[:resources][0]).to have_key :url
