@@ -3,8 +3,8 @@ class ErrorSerializer
     {
       errors: [
         {
-          id: "unknown_error",
-          no_results: "an error ocurred please forgive us"
+          id: "nil_results",
+          no_results: "Search return nil results"
         }
       ]
     }
