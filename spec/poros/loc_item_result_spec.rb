@@ -38,3 +38,5 @@ RSpec.describe LocItemResult do
     expect(item.service_low).to eq("some_other_link")
   end
 end
+
+# VCR.turn_off! Didn't know this is a thing
