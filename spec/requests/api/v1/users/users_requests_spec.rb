@@ -33,6 +33,7 @@ RSpec.describe "Users API Requests" do
   end
 
   it "send all users from an index endpoint" do
+    create_list(:user, 5)
     get '/api/v1/users'
 
     response_body = JSON.parse(response.body, symbolize_names: true)
@@ -61,7 +62,7 @@ RSpec.describe "Users API Requests" do
   end
 
   it "send one user from a show endpoint" do
-    user_1 = User.first
+    user_1 = create(:user)
 
     get "/api/v1/users/#{user_1.id}"
 

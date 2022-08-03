@@ -123,7 +123,7 @@ RSpec.describe "Favorites API requests" do
   end
 
   it "sends one favorite of a user from a show endpoint" do
-    user = User.first
+    user = create(:user)
     fav_1 = Favorite.create!( { title: "123 Real Street, Denver, CO",
                                 user_id: user.id,
                                 other_titles: "More Cool Names",
@@ -188,7 +188,7 @@ RSpec.describe "Favorites API requests" do
   end
 
   it "sends an error if a favorite is not found" do
-    user = User.first
+    user = create(:user)
     fav_1 = Favorite.create!( {   title: "123 Real Street, Denver, CO",
                                   user_id: user.id,
                                   other_titles: "More Cool Names",
