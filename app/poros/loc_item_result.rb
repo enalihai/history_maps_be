@@ -9,6 +9,7 @@ class LocItemResult
               :photo_url,
               :photo_large,
               :photo_medium,
+              :photo_small,
               :resource_links,
               :direct_link,
               :service_medium,
@@ -29,6 +30,7 @@ class LocItemResult
     @photo_url = data[:resources][0][:url]
     @photo_medium = data[:resources][0][:medium]
     @photo_large = data[:resources][0][:large]
+    @photo_small = data[:resources][0][:small]
   end
 
   def all_details(data)

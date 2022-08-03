@@ -15,7 +15,8 @@ RSpec.describe LocItemResult do
                       service_low: "some_other_link"  },
              resources: [ {  url: "photo_path",
                              large: "large_photo_path",
-                             medium: "medium_photo_path" } ]
+                             medium: "medium_photo_path",
+                             small: "small_photo_path" } ]
            }
     item = LocItemResult.new(data)
 
@@ -30,6 +31,7 @@ RSpec.describe LocItemResult do
     expect(item.photo_url).to eq("photo_path")
     expect(item.photo_large).to eq("large_photo_path")
     expect(item.photo_medium).to eq("medium_photo_path")
+    expect(item.photo_small).to eq("small_photo_path")
     expect(item.direct_link).to eq("actual_loc_page_path")
     expect(item.resource_links).to eq(["path_one", "path_two"])
     expect(item.service_medium).to eq("some_link")
