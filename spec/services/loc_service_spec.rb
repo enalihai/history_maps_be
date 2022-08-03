@@ -9,7 +9,7 @@ RSpec.describe LocService do
 
   it "returns a collection of results from an endpoint" do
     results = LocService.get_location_collection_data('80033')
-require "pry"; binding.pry
+
     expect(results).to be_a Hash
     expect(results).to have_key :results
     expect(results[:results]).to be_a Array
