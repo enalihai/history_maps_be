@@ -207,4 +207,24 @@ RSpec.describe "Favorites API requests" do
     expect(response.code).to eq("404")
     expect(response.message).to eq("Not Found")
   end
+
+  it 'returns an error object when favorites are not posted properly' do
+    user = create(:user)
+    fav_params = {  title: nil,
+                    user_id: user.id,
+                    other_titles: "More Cool Names",
+                    pdf: "pdf_path",
+                    photo: "photo_path",
+                    details: "Cool notes about the thing",
+                    location_id: "coXXXX" }
+
+    headers = { "CONTENT_TYPE" => "application/json" }
+
+    post "/api/v1/users/#{user.id}/favorites", headers: headers, params: JSON.generate(fav_params)
+require "pry"; binding.pry
+    expect(response).to be_successful
+    expect(response.status).to eq 201
+    expect(user).to be_a Hash
+  end
+
 end

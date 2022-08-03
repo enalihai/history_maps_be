@@ -4,6 +4,7 @@ class Api::V1::ResultsController < ApplicationController
   end
 
   def show
+    #render json: ErrorSerializer.show_errors if params[:id].nil?
     render json: LocResultFacade.create_single_item_result(params[:id])
   end
 
