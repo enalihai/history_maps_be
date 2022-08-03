@@ -7,7 +7,8 @@ RSpec.describe LocItemResult do
                       id: "co0994",
                       place: [ {  latitude: "39.665578",
                                   longitude: "-105.206856" } ],
-                      notes: [ {  note: "Park Details" } ] },
+                      notes: [ {  note: "Park Details" , label: "field label" },
+                               {  note: "Second Details", label: "field label" } ] },
              resources: [ {  url: "photo_path",
                              large: "large_photo_path",
                              medium: "medium_photo_path" } ]
@@ -20,7 +21,8 @@ RSpec.describe LocItemResult do
     expect(item.other_titles).to eq("Park of Red Rocks")
     expect(item.lat).to eq("39.665578")
     expect(item.long).to eq("-105.206856")
-    expect(item.details).to eq("Park Details")
+    expect(item.details).to eq([ {  note: "Park Details" , label: "field label" },
+                                 {  note: "Second Details", label: "field label" } ])
     expect(item.photo_url).to eq("photo_path")
     expect(item.photo_large).to eq("large_photo_path")
     expect(item.photo_medium).to eq("medium_photo_path")
