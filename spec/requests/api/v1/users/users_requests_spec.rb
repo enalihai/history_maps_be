@@ -61,7 +61,7 @@ RSpec.describe "Users API Requests" do
   end
 
   it "send one user from a show endpoint" do
-    user_1 = User.first
+    user_1 = create(:user)
 
     get "/api/v1/users/#{user_1.id}"
 
