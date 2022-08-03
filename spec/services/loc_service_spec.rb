@@ -9,15 +9,20 @@ RSpec.describe LocService do
 
   it "returns a collection of results from an endpoint" do
     results = LocService.get_location_collection_data('80033')
-
+require "pry"; binding.pry
     expect(results).to be_a Hash
     expect(results).to have_key :results
     expect(results[:results]).to be_a Array
 
     expect(results[:results][0]).to have_key :pk
     expect(results[:results][0]).to have_key :title
+    expect(results[:results][0]).to have_key :image
+    expect(results[:results][0][:image]).to have_key :full
+    expect(results[:results][0][:image]).to have_key :thumb
     expect(results[:results][0]).to have_key :links
     expect(results[:results][0][:links]).to have_key :item
+    expect(results[:results][0]).to have_key :creator
+    expect(results[:results][0]).to have_key :created_published_date
   end
 
   it "returns a single result from an index" do
