@@ -20,10 +20,7 @@ RSpec.describe 'Location Search Requests' do
     get '/api/v1/search?location=colfax'
 
     location = JSON.parse(response.body, symbolize_names: true)
-    # response_body = JSON.parse(response.body, symbolize_names: true)
-    # location = response_body
-
-    # require "pry"; binding.pry
+    
     expect(response.status).to eq(200)
     expect(location).to be_a Hash
   end

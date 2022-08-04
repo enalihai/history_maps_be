@@ -1,4 +1,4 @@
 class FavoriteSerializer
   include JSONAPI::Serializer
-  attributes :location_id, :user_id, :title, :other_titles, :pdf, :photo, :details
+  attributes :user_id, :title, :image_full, :short_id, :published_date, :creator, :thumbnail
 end
