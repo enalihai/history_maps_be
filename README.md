@@ -77,16 +77,28 @@ GET ```'/api/v1/users/:id/favorites'```
 
 POST ```'/api/v1/users/:id/favorites'```  
 - Routes to favorites#create
+- Example Json Result:
+  ![POST Favorite](./pictures/postman_examples/POST_favorite.png)
 
 GET ```'/api/v1/search'```  
 - Routes to location_search#show
   * params: `location`
+- Example Json Result:
+  ![GET Location](./pictures/postman_examples/GET_hm_mq.png)
 
 GET ```'/api/v1/results'```
 - Routes to results#index
+- Example Json Result:
+  ![GET HM Index](./pictures/postman_examples/GET_hm_index.png)
+- Example Json Result From Library of Congress:
+  ![GET LoC Index](./pictures/postman_examples/GET_loc_index.png)
 
 GET ```'/api/v1/results/:id'```
 - Routes to results#show
+- Example Json Result:
+  ![GET HM Item](./pictures/postman_examples/GET_hm_item.png)
+- Example Json Result From Library of Congress:
+  ![GET LoC Item](./pictures/postman_examples/GET_loc_item.png)
 
 <br>
 
@@ -109,7 +121,7 @@ __Frontend__
 
 ### Backend Schema
 ---
-![Schema](./pictures/schema_2.png)  
+![Schema](./pictures/schema_3.png)  
 
 __Tables__  
 
