@@ -106,7 +106,7 @@ RSpec.describe "Favorites API requests" do
     user = create(:user)
     create_list(:favorite, 6, user_id: user.id)
     fav_id = user.favorites.first.id
-    
+
     get "/api/v1/users/#{user.id}/favorites/#{fav_id}"
     
     response_body = JSON.parse(response.body, symbolize_names: true)
@@ -157,18 +157,13 @@ RSpec.describe "Favorites API requests" do
     expect(favorite[:attributes][:thumbnail]).to be_a String
   end
 
-  xit "sends an error if a favorite is not found" do
+  it "sends an error if a favorite is not found" do
     user = create(:user)
-    fav_1 = Favorite.create!( {   title: "123 Real Street, Denver, CO",
-                                  user_id: user.id,
-                                  other_titles: "More Cool Names",
-                                  pdf: "pdf_path_1",
-                                  photo: "photo_path_1",
-                                  details: "Some Cool notes about the thing",
-                                  location_id: "coXXXX",
-                                  } )
+    user_2 = create(:user)
+    create_list(:favorite, 3, user_id: user.id)
+    create_list(:favorite, 6, user_id: user_2.id)
 
-    get "/api/v1/users/#{user.id}/favorites/2"
+    get "/api/v1/users/#{user.id}/favorites/4"
     
     expect(response.status).to eq(404)
     expect(response.code).to eq("404")
